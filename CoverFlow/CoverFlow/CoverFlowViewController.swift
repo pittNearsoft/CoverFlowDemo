@@ -77,6 +77,17 @@ extension CoverFlowViewController: UICollectionViewDataSource{
         return cell
     }
     
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        let currentIndex = Int(self.coverFlowCollection.contentOffset.x / self.coverFlowCollection.frame.size.width)
+//        print(imageList[currentIndex])
+//
+//    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let currentIndex = Int(self.coverFlowCollection.contentOffset.x / self.coverFlowCollection.frame.size.width)
+        print(imageList[currentIndex])
+    }
+    
 }
 
 

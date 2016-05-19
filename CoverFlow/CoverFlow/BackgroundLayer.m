@@ -14,9 +14,9 @@
 //Metallic grey gradient background
 + (CAGradientLayer*) greyGradient {
     
-    UIColor *colorOne = [UIColor colorWithWhite:0.9 alpha:1.0];
-    UIColor *colorTwo = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.85 alpha:1.0];
-    UIColor *colorThree     = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.7 alpha:1.0];
+    UIColor *colorOne = [UIColor colorWithWhite:0.2 alpha:1.0];
+    UIColor *colorTwo = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.25 alpha:1.0];
+    UIColor *colorThree     = [UIColor colorWithHue:0.15 saturation:0.0 brightness:0.1 alpha:1.0];
     UIColor *colorFour = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.4 alpha:1.0];
     
     NSArray *colors =  [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, colorThree.CGColor, colorFour.CGColor, nil];
