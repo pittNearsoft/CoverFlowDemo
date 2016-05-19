@@ -86,13 +86,7 @@ class CoverFlowViewController: UIViewController {
 
 }
 
-
-extension CoverFlowViewController: UICollectionViewDelegate{
-    
-    
-}
-
-extension CoverFlowViewController: UICollectionViewDataSource{
+extension CoverFlowViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
