@@ -77,10 +77,12 @@ class CoverFlowViewController: UIViewController {
     @IBAction func stopPlayAction(sender: AnyObject) {
         if buttonAction == .Paused {
             buttonAction = .Playing
-            playButton.setTitle("❚❚", forState: .Normal)
+            playButton.setImage(UIImage(named: "pause"), forState: .Normal)
+            print("Playing a song...")
         }else{
             buttonAction = .Paused
-            playButton.setTitle("►", forState: .Normal)
+            playButton.setImage(UIImage(named: "play"), forState: .Normal)
+            print("Pausing a song...")
         }
     }
 
