@@ -113,7 +113,7 @@ extension CoverFlowViewController: UICollectionViewDataSource, UICollectionViewD
 extension CoverFlowViewController: UICollectionViewDelegateFlowLayout{
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 375, height: 290)
+        return CGSize(width: collectionView.frame.width, height: 290)
     }
 
 }
