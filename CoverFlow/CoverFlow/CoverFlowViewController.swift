@@ -8,11 +8,20 @@
 
 import UIKit
 
+enum Action: Int {
+    case Playing
+    case Paused
+}
 
 class CoverFlowViewController: UIViewController {
 
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var coverFlowCollection: UICollectionView!
     var imageList = [String]()
+    var artistList = [String]()
+    var buttonAction = Action.Paused
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +44,19 @@ class CoverFlowViewController: UIViewController {
             "sonataArtica.jpg"
         ]
         
+        artistList = [
+            "Aerosmith",
+            "Beyonce",
+            "Eminem",
+            "Santana",
+            "Pitbull",
+            "Queen",
+            "Rammstein",
+            "Rihanna",
+            "Rolling Stones",
+            "Sonata Artica"
+        ]
+        
         //Add a gradient background to superview
         let bgLayer: CAGradientLayer = BackgroundLayer.blueGradient()
         bgLayer.frame = self.view.bounds
@@ -43,6 +65,7 @@ class CoverFlowViewController: UIViewController {
         //Make coverFlowCollection with transparent background
         self.coverFlowCollection.backgroundColor = UIColor.clearColor()
         self.coverFlowCollection.backgroundView = UIView.init(frame: CGRectZero)
+
         
     }
 
@@ -51,6 +74,15 @@ class CoverFlowViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func stopPlayAction(sender: AnyObject) {
+        if buttonAction == .Paused {
+            buttonAction = .Playing
+            playButton.setTitle("❚❚", forState: .Normal)
+        }else{
+            buttonAction = .Paused
+            playButton.setTitle("►", forState: .Normal)
+        }
+    }
 
 }
 
@@ -69,7 +101,6 @@ extension CoverFlowViewController: UICollectionViewDataSource{
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return imageList.count
     }
-    
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let cell = coverFlowCollection.dequeueReusableCellWithReuseIdentifier(CoverFlowCell.reuseIdentifier(), forIndexPath: indexPath) as! CoverFlowCell
@@ -77,34 +108,19 @@ extension CoverFlowViewController: UICollectionViewDataSource{
         return cell
     }
     
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        let currentIndex = Int(self.coverFlowCollection.contentOffset.x / self.coverFlowCollection.frame.size.width)
-//        print(imageList[currentIndex])
-//
-//    }
-    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let currentIndex = Int(self.coverFlowCollection.contentOffset.x / self.coverFlowCollection.frame.size.width)
-        print(imageList[currentIndex])
+        artistLabel.text = artistList[currentIndex]
     }
     
 }
 
 
-//extension CoverFlowViewController: UICollectionViewDelegateFlowLayout{
-//
-//
-////    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
-////        return UIEdgeInsetsMake(0,0,0,0)  // top, left, bottom, right
-////    }
-////    
-////    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat{
-////        return 100.0
-////    }
-////
-////    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat{
-////        return 100.0
-////    }
-//
-//}
+extension CoverFlowViewController: UICollectionViewDelegateFlowLayout{
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 375, height: 290)
+    }
+
+}
 
