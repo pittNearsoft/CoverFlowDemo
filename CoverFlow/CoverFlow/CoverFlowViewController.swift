@@ -35,11 +35,12 @@ class CoverFlowViewController: UIViewController {
             "sonataArtica.jpg"
         ]
         
-        
+        //Add a gradient background to superview
         let bgLayer: CAGradientLayer = BackgroundLayer.blueGradient()
         bgLayer.frame = self.view.bounds
         self.view.layer.insertSublayer(bgLayer, atIndex: 0)
         
+        //Make coverFlowCollection with transparent background
         self.coverFlowCollection.backgroundColor = UIColor.clearColor()
         self.coverFlowCollection.backgroundView = UIView.init(frame: CGRectZero)
         
