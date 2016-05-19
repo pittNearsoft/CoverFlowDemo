@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoverFlowCell" id="gTV-IL-0wX" customClass="CoverFlowCell" customModule="CoverFlow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aerosmith.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pMf-Bv-fe9">
+                        <rect key="frame" x="25" y="25" width="250" height="250"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="dqf-GT-PeK"/>
+                            <constraint firstAttribute="height" constant="250" id="jm5-nz-B2c"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="pMf-Bv-fe9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="AuM-Hw-aqM"/>
+                <constraint firstAttribute="trailing" secondItem="pMf-Bv-fe9" secondAttribute="trailing" constant="25" id="cyX-MG-3sU"/>
+                <constraint firstItem="pMf-Bv-fe9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="iOg-aB-IQR"/>
+                <constraint firstAttribute="bottom" secondItem="pMf-Bv-fe9" secondAttribute="bottom" constant="25" id="lUY-ud-rxl"/>
+            </constraints>
+            <size key="customSize" width="384" height="285"/>
+            <connections>
+                <outlet property="imageCover" destination="pMf-Bv-fe9" id="7n8-Uz-JI1"/>
+            </connections>
+            <point key="canvasLocation" x="401" y="422.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="aerosmith.jpg" width="397" height="396"/>
+    </resources>
+</document>
