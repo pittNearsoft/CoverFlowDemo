@@ -63,7 +63,7 @@ class CoverFlowViewController: UIViewController {
         self.view.layer.insertSublayer(bgLayer, atIndex: 0)
         
         //Make coverFlowCollection with transparent background
-        self.coverFlowCollection.backgroundColor = UIColor.clearColor()
+        self.coverFlowCollection.backgroundColor = UIColor.blackColor()
         self.coverFlowCollection.backgroundView = UIView.init(frame: CGRectZero)
 
         

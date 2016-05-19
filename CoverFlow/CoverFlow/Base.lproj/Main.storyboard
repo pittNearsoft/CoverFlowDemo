@@ -20,6 +20,10 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BPY-Nf-Iw4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="290" id="MKf-RR-Y8k"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="uNO-Fn-gsi">
                                     <size key="itemSize" width="375" height="290"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,37 +32,25 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBZ-rd-5ID">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBZ-rd-5ID">
                                 <rect key="frame" x="28" y="379" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BhZ-il-eo8"/>
                                     <constraint firstAttribute="width" constant="44" id="w2F-xZ-CGr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="|◄">
+                                <state key="normal" image="back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53j-By-Wpo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53j-By-Wpo">
                                 <rect key="frame" x="243" y="379" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9EL-YG-Gqb"/>
                                     <constraint firstAttribute="width" constant="44" id="ibT-MN-fEs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="►|">
+                                <state key="normal" image="forward">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szb-IF-aPd">
-                                <rect key="frame" x="138" y="379" width="44" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="►">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopPlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ReV-6h-yvH"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aerosmith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-zM-CB7">
                                 <rect key="frame" x="20" y="327" width="280" height="21"/>
@@ -66,21 +58,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szb-IF-aPd">
+                                <rect key="frame" x="124" y="365" width="72" height="72"/>
+                                <state key="normal" image="play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopPlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ReV-6h-yvH"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BPY-Nf-Iw4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Tx-Xm-123"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="53j-By-Wpo" secondAttribute="bottom" constant="81" id="CFs-dj-ObC"/>
-                            <constraint firstItem="53j-By-Wpo" firstAttribute="leading" secondItem="Szb-IF-aPd" secondAttribute="trailing" constant="61" id="LSI-K6-uzC"/>
-                            <constraint firstItem="53j-By-Wpo" firstAttribute="bottom" secondItem="Szb-IF-aPd" secondAttribute="bottom" id="Mle-he-p96"/>
-                            <constraint firstItem="Szb-IF-aPd" firstAttribute="top" secondItem="KBZ-rd-5ID" secondAttribute="top" id="Rfn-wT-zCR"/>
+                            <constraint firstItem="53j-By-Wpo" firstAttribute="leading" secondItem="Szb-IF-aPd" secondAttribute="trailing" constant="47" id="LSI-K6-uzC"/>
+                            <constraint firstItem="53j-By-Wpo" firstAttribute="bottom" secondItem="Szb-IF-aPd" secondAttribute="bottom" constant="-14" id="Mle-he-p96"/>
+                            <constraint firstItem="Szb-IF-aPd" firstAttribute="top" secondItem="KBZ-rd-5ID" secondAttribute="top" constant="-14" id="Rfn-wT-zCR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="53j-By-Wpo" secondAttribute="trailing" constant="17" id="Rnz-ff-PAS"/>
-                            <constraint firstItem="53j-By-Wpo" firstAttribute="top" secondItem="Szb-IF-aPd" secondAttribute="top" id="SRG-ET-gDi"/>
+                            <constraint firstItem="53j-By-Wpo" firstAttribute="top" secondItem="Szb-IF-aPd" secondAttribute="top" constant="14" id="SRG-ET-gDi"/>
                             <constraint firstItem="Bmq-zM-CB7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="UZa-Np-6UP"/>
-                            <constraint firstItem="Szb-IF-aPd" firstAttribute="leading" secondItem="KBZ-rd-5ID" secondAttribute="trailing" constant="66" id="adG-BC-62P"/>
+                            <constraint firstItem="Szb-IF-aPd" firstAttribute="leading" secondItem="KBZ-rd-5ID" secondAttribute="trailing" constant="52" id="adG-BC-62P"/>
                             <constraint firstAttribute="trailing" secondItem="BPY-Nf-Iw4" secondAttribute="trailing" id="eD1-R4-IzX"/>
-                            <constraint firstItem="Szb-IF-aPd" firstAttribute="bottom" secondItem="KBZ-rd-5ID" secondAttribute="bottom" id="hTG-oz-GeH"/>
-                            <constraint firstItem="Szb-IF-aPd" firstAttribute="top" secondItem="Bmq-zM-CB7" secondAttribute="bottom" constant="31" id="hU1-wj-mE6"/>
+                            <constraint firstItem="Szb-IF-aPd" firstAttribute="bottom" secondItem="KBZ-rd-5ID" secondAttribute="bottom" constant="14" id="hTG-oz-GeH"/>
+                            <constraint firstItem="Szb-IF-aPd" firstAttribute="top" secondItem="Bmq-zM-CB7" secondAttribute="bottom" constant="17" id="hU1-wj-mE6"/>
                             <constraint firstAttribute="trailing" secondItem="Bmq-zM-CB7" secondAttribute="trailing" constant="20" id="moj-fs-plO"/>
                             <constraint firstItem="KBZ-rd-5ID" firstAttribute="top" secondItem="BPY-Nf-Iw4" secondAttribute="bottom" constant="89" id="r4H-NA-LjP"/>
                             <constraint firstItem="KBZ-rd-5ID" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="ra6-Yg-QEv"/>
@@ -121,4 +122,9 @@
             <point key="canvasLocation" x="300.26666666666665" y="890.81333333333328"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="36" height="39"/>
+        <image name="forward" width="36" height="39"/>
+        <image name="play" width="74" height="74"/>
+    </resources>
 </document>
